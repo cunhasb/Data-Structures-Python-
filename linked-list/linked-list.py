@@ -29,3 +29,13 @@ class LinkedList(object):
             counter += 1
 
         return None
+
+    def insert(self, new_element, position):
+        if position > 1:
+
+            target_position = self.get_position(position - 1)
+            new_element.next = target_position.next
+            target_position.next = new_element
+        else:
+            new_element.next = self.head
+            self.head = new_element
