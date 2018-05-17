@@ -39,3 +39,20 @@ class LinkedList(object):
         else:
             new_element.next = self.head
             self.head = new_element
+
+    def delete(self, value):
+        current = self.head
+        previous = None
+
+        while current:
+            if current.value == value:
+                if not previous:
+                    self.head = current.next
+                    return True
+
+                else:
+                    previous.next = current.next
+                    return True
+            previous = current
+            current = current.next
+        return False
