@@ -56,3 +56,8 @@ class LinkedList(object):
             previous = current
             current = current.next
         return False
+
+    def insert_first(self, new_element):
+        new_element.next = self.head
+        self.head = new_element
+        return self
