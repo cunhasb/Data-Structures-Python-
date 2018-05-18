@@ -16,7 +16,7 @@ class LinkedList(object):
                 current = current.next
             current.next = new_element
         else:
-            self.head.next = new_element
+            self.head = new_element
 
     def get_position(self, position):
         current = self.head
